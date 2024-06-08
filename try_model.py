@@ -1,5 +1,6 @@
 from torch import nn, optim 
 from torch.utils.data import DataLoader
+from tqdm import tqdm
 from models.discriminator import Discriminator
 from models.generator import Generator
 import configs.config as config
@@ -14,8 +15,19 @@ def main():
     test_dataset = TestDataset(root_dir=config.TEST_DIR)
 
     test_loader = DataLoader(test_dataset,batch_size=config.BATCH_SIZE,shuffle=True,num_workers=config.NUM_WORKERS)
+    loop = tqdm(test_loader) 
+    folder= "results"
+    index =0
+    for idx,(x,y) in enumerate(loop):
+        gen.eval()
+        with torch.no_grad():
+            y_fake = gen(x)
+            y_fake = y_fake * 0.5 + 0.5          
+            save_image(y_fake, folder + f"/y_gen_{index}.png")
+            save_image(x * 0.5 + 0.5, folder + f"/input{index}_.png")
+        index+=1
+    
 
-    save_some_examples(gen,test_loader,5,"results") 
 
 if __name__ == "__main__":
     main()

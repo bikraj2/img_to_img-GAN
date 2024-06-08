@@ -17,7 +17,7 @@ NUM_EPOCHS = 500
 LOAD_MODEL = True 
 SAVE_MODEL =False 
 CHECKPOINT_DISC = "data/disc.path.tar"
-CHECKPOINT_GEN = "data/gen.path.tar"
+CHECKPOINT_GEN = "data/gen.pth(1).tar"
 
 both_transform = A.Compose(
     
