@@ -8,7 +8,6 @@ class MapDataset(Dataset):
     def __init__(self,root_dir):
         self.root_dir = root_dir
         self.list_files = os.listdir(self.root_dir)
-        print(self.list_files)
     def __len__(self):
         return len(self.list_files)
     def __getitem__(self,index):
@@ -29,7 +28,6 @@ class TestDataset(Dataset):
     def __init__(self,root_dir):
         self.root_dir = root_dir
         self.list_files = os.listdir(self.root_dir)
-        print(self.list_files)
     def __len__(self):
         return len(self.list_files)
     def __getitem__(self,index):

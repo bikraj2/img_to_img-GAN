@@ -47,7 +47,6 @@ class Generator(nn.Module):
         )
     def forward(self,x):
         d1 = self.initial_down(x)
-        print(d1.shape)
         d2 = self.down1(d1)
         d3 = self.down2(d2)
         d4 = self.down3(d3)
@@ -68,6 +67,5 @@ def test():
     x = torch.randn((1,3,256,256))
     model = Generator(in_channels=3,features=64)
     preds = model(x)
-    print(preds.shape)
 if __name__ == "__main__":
     test()

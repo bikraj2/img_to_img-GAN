@@ -3,9 +3,9 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-TRAIN_DIR = "data/train"
-VAL_DIR = "data/val"
-TEST_DIR ="testImages"
+TRAIN_DIR = "data/map/train"
+VAL_DIR = "data/map/val"
+TEST_DIR ="testImages/segmentation"
 LEARNING_RATE = 2e-4
 BATCH_SIZE = 16
 NUM_WORKERS = 2
@@ -15,9 +15,9 @@ L1_LAMBDA = 100
 LAMBDA_GP = 10
 NUM_EPOCHS = 500
 LOAD_MODEL = True 
-SAVE_MODEL =False 
-CHECKPOINT_DISC = "data/disc.path.tar"
-CHECKPOINT_GEN = "data/gen.pth(1).tar"
+SAVE_MODEL = True
+CHECKPOINT_DISC = "data/map/disc.pth.tar"
+CHECKPOINT_GEN = "data/map/gen.pth.tar"
 
 both_transform = A.Compose(
     

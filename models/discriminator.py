@@ -43,7 +43,7 @@ def test():
 
     model = Discriminator()
     preds  = model(x,y)
-    print(preds.shape)
+    (preds.shape)
 
 if __name__ == "__main__":
     test()
