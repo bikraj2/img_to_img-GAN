@@ -3,9 +3,10 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-TRAIN_DIR = "data/map/train"
+TRAIN_DIR = "data/map/trailForGraph"
 VAL_DIR = "data/map/val"
 TEST_DIR ="testImages/segmentation"
+TRAIN_DATA="map"
 LEARNING_RATE = 2e-4
 BATCH_SIZE = 16
 NUM_WORKERS = 2
