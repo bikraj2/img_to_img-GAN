@@ -5,7 +5,7 @@ from albumentations.pytorch import ToTensorV2
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 TRAIN_DIR = "data/map/trailForGraph"
 VAL_DIR = "data/map/val"
-TEST_DIR ="testImages/segmentation"
+TEST_DIR ="testImages/maps"
 TRAIN_DATA="map"
 LEARNING_RATE = 2e-4
 BATCH_SIZE = 16

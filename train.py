@@ -77,7 +77,9 @@ def main():
                 save_checkpoint(gen,opt_gen,filename=config.CHECKPOINT_GEN)
                 save_checkpoint(disc,opt_disc,filename=config.CHECKPOINT_DISC)
             save_some_examples(gen,val_loader,epoch,folder="evaluation")
+            print(epoch)
             f.write(f'{epoch} , {l1_loss}, {g_loss},{cgan_loss},{d_loss} \n')
+
 
 def plotLoss(epoch, generator_loss, discriminator_loss):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))

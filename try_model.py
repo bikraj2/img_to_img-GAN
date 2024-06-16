@@ -11,7 +11,7 @@ def main():
     gen =Generator(in_channels=3).to(config.DEVICE) 
     opt_disc = optim.Adam(disc.parameters(),lr=config.LEARNING_RATE,betas=(0.5,0.99))
     opt_gen = optim.Adam(gen.parameters(),lr=config.LEARNING_RATE,betas=(0.5,0.99))
-    load_checkpoint("./data/cityscape.pth.tar",gen,opt_gen,config.LEARNING_RATE)
+    load_checkpoint("data/map/gen.pth.tar",gen,opt_gen,config.LEARNING_RATE)
     test_dataset = TestDataset(root_dir=config.TEST_DIR)
 
     test_loader = DataLoader(test_dataset,batch_size=config.BATCH_SIZE,shuffle=True,num_workers=config.NUM_WORKERS)
