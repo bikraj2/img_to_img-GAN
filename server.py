@@ -41,6 +41,7 @@ class ImageProcessRequest(BaseModel):
 def process_image(request: ImageProcessRequest):
     image_path = request.path
     model = request.model
+    print(model)
     urllib.request.urlretrieve(image_path,"images/input.png")
     outPath = get_output(model=generators[model]) 
     print(outPath)

@@ -3,7 +3,7 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-TRAIN_DIR = "data/map/trailForGraph"
+TRAIN_DIR = "data/map/train"
 VAL_DIR = "data/map/val"
 TEST_DIR ="testImages/map"
 TRAIN_DATA="map"
@@ -18,7 +18,7 @@ NUM_EPOCHS = 500
 LOAD_MODEL = True 
 SAVE_MODEL = True
 CHECKPOINT_DISC = "data/map/disc.pth.tar"
-CHECKPOINT_GEN = "data/map/gen.pth(1).tar"
+CHECKPOINT_GEN = "data/map/gen.pth.tar"
 DESTINATION = "results/map"
 
 both_transform = A.Compose(
