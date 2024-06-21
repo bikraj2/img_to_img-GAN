@@ -2,10 +2,14 @@ from typing import Union
 
 from fastapi import FastAPI
 from pydantic import BaseModel
-
+import urllib.request
 from get_output import get_output
+import cloudinary
 app = FastAPI()
 
+cloudinary.config(cloud_name='<cloud-name-here>',
+                  api_key='561963979883516',
+                  api_secret='9QgwkPAa2apZpgjIRc4rfR-pTNw')
 
 from torch import  optim 
 from models.generator import Generator
@@ -37,6 +41,7 @@ class ImageProcessRequest(BaseModel):
 def process_image(request: ImageProcessRequest):
     image_path = request.path
     model = request.model
-    
-    outPath = get_output(model=generators[model],dataDir=image_path) 
+    urllib.request.urlretrieve(image_path,"images/input.png")
+    outPath = get_output(model=generators[model]) 
+    print(outPath)
     return {"processed_image_path": outPath}

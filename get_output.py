@@ -5,7 +5,7 @@ from tqdm import tqdm
 import torch
 import uuid
 import configs.config as config
-def get_output(model:Generator,dataDir):
+def get_output(model:Generator,dataDir="images"):
     test_dataset = TestDataset(root_dir=dataDir)
 
     index = 0
